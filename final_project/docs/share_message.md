@@ -6,6 +6,6 @@ J'ai termine mon projet final Vibecoding : **THP Dev Manual**.
 
 C'est un petit manuel interactif pour aider les etudiants THP a reviser les etapes importantes d'un projet dev : cahier des charges, frontend, backend Rails, React, API, debug, workflow et documentation.
 
-Lien GitHub : [a ajouter]
+Lien GitHub : https://github.com/Enzoulette-94/vibecoding-project
 
 Vos retours sont les bienvenus !
