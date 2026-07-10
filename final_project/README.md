@@ -52,6 +52,15 @@ final_project/
 - rack-cors
 - oxlint
 
+## Prerequisites
+
+- Ruby 3.4.2
+- Bundler
+- Node.js 20.19+ or 22.12+
+- npm
+
+Run all commands from the repository root, the directory that contains `final_project/`.
+
 ## Installation
 
 Install backend dependencies:
@@ -59,8 +68,7 @@ Install backend dependencies:
 ```bash
 cd final_project/backend/thp_dev_manual_api
 bundle install
-rails db:create
-rails db:migrate
+rails db:prepare
 rails db:seed
 ```
 
@@ -68,14 +76,16 @@ Install frontend dependencies:
 
 ```bash
 cd final_project/frontend/thp-dev-manual
-npm install
+npm ci
 ```
 
 ## Run the Rails backend
 
+Open a first terminal:
+
 ```bash
 cd final_project/backend/thp_dev_manual_api
-rails server
+rails server -p 3000
 ```
 
 The backend runs on:
@@ -85,6 +95,8 @@ http://localhost:3000
 ```
 
 ## Run the React frontend
+
+Open a second terminal:
 
 ```bash
 cd final_project/frontend/thp-dev-manual
@@ -102,6 +114,8 @@ http://localhost:5173
 Test the backend:
 
 ```bash
+cd final_project/backend/thp_dev_manual_api
+rails test
 curl http://localhost:3000/api/chapters
 curl http://localhost:3000/api/chapters/1
 ```
@@ -152,7 +166,6 @@ Main fields:
 - No search.
 - No category filter.
 - No dark mode.
-- Rails scaffold tests still need to be adapted to the namespaced API routes.
 
 ## Possible improvements
 
@@ -160,7 +173,6 @@ Main fields:
 - Add a category filter.
 - Add reading progress.
 - Add a back-to-top button.
-- Adapt Rails tests to the `api` namespace.
 - Deploy the frontend and backend.
 
 ---
@@ -223,6 +235,15 @@ final_project/
 - rack-cors
 - oxlint
 
+## Prérequis
+
+- Ruby 3.4.2
+- Bundler
+- Node.js 20.19+ ou 22.12+
+- npm
+
+Lancer toutes les commandes depuis la racine du dépôt, le dossier qui contient `final_project/`.
+
 ## Installation
 
 Installer les dépendances du backend :
@@ -230,8 +251,7 @@ Installer les dépendances du backend :
 ```bash
 cd final_project/backend/thp_dev_manual_api
 bundle install
-rails db:create
-rails db:migrate
+rails db:prepare
 rails db:seed
 ```
 
@@ -239,14 +259,16 @@ Installer les dépendances du frontend :
 
 ```bash
 cd final_project/frontend/thp-dev-manual
-npm install
+npm ci
 ```
 
 ## Lancer le backend Rails
 
+Ouvrir un premier terminal :
+
 ```bash
 cd final_project/backend/thp_dev_manual_api
-rails server
+rails server -p 3000
 ```
 
 Le backend tourne sur :
@@ -256,6 +278,8 @@ http://localhost:3000
 ```
 
 ## Lancer le frontend React
+
+Ouvrir un deuxième terminal :
 
 ```bash
 cd final_project/frontend/thp-dev-manual
@@ -273,6 +297,8 @@ http://localhost:5173
 Tester le backend :
 
 ```bash
+cd final_project/backend/thp_dev_manual_api
+rails test
 curl http://localhost:3000/api/chapters
 curl http://localhost:3000/api/chapters/1
 ```
@@ -323,7 +349,6 @@ Champs principaux :
 - Pas de recherche.
 - Pas de filtre par catégorie.
 - Pas de mode sombre.
-- Les tests Rails générés par le scaffold doivent être adaptés aux routes API namespacées.
 
 ## Améliorations possibles
 
@@ -331,5 +356,4 @@ Champs principaux :
 - Ajouter un filtre par catégorie.
 - Ajouter une progression de lecture.
 - Ajouter un bouton retour en haut.
-- Adapter les tests Rails au namespace `api`.
 - Déployer le frontend et le backend.
